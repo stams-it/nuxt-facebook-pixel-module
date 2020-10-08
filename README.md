@@ -1,11 +1,11 @@
-# nuxt-facebook-pixel-module
+# nuxt-fb-pixel-module
 
-[![npm (scoped with tag)](https://img.shields.io/npm/v/nuxt-facebook-pixel-module/latest.svg?style=flat-square)](https://npmjs.com/package/nuxt-facebook-pixel-module)
-[![npm](https://img.shields.io/npm/dt/nuxt-facebook-pixel-module.svg?style=flat-square)](https://npmjs.com/package/nuxt-facebook-pixel-module)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/nuxt-fb-pixel-module/latest.svg?style=flat-square)](https://npmjs.com/package/nuxt-fb-pixel-module)
+[![npm](https://img.shields.io/npm/dt/nuxt-fb-pixel-module.svg?style=flat-square)](https://npmjs.com/package/nuxt-fb-pixel-module)
 [![js-standard-style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com)
-[![CircleCI](https://img.shields.io/circleci/project/github/WilliamDASILVA/nuxt-facebook-pixel-module/master.svg?style=flat-square)](https://circleci.com/gh/WilliamDASILVA/nuxt-facebook-pixel-module/tree/master)
+[![CircleCI](https://img.shields.io/circleci/project/github/WilliamDASILVA/nuxt-facebook-pixel-module/master.svg?style=flat-square)](https://circleci.com/gh/WilliamDASILVA/nuxt-fb-pixel-module/tree/master)
 
-> A NuxtJS module thats injects Facebook Pixel code
+> A NuxtJS module thats injects Facebook Pixel code forked from unsupported [nuxt-facebook-pixel-module](https://www.npmjs.com/package/nuxt-facebook-pixel-module)
 
 ## Table of Contents
 
@@ -23,23 +23,23 @@
 ## Install
 
 ```bash
-$ npm install --save nuxt-facebook-pixel-module
+$ npm install --save nuxt-fb-pixel-module
 // or
-$ yarn add nuxt-facebook-pixel-module
+$ yarn add nuxt-fb-pixel-module
 ```
 
 ## Getting Started
 
-Add `nuxt-facebook-pixel-module` to `modules` section of `nuxt.config.js`.
+Add `nuxt-fb-pixel-module` to `modules` section of `nuxt.config.js`.
 
 ```js
 {
   modules: [
     // Simple usage
-    'nuxt-facebook-pixel-module',
+    'nuxt-fb-pixel-module',
 
     // With options
-    ['nuxt-facebook-pixel-module', {
+    ['nuxt-fb-pixel-module', {
       /* module options */
       track: 'PageView',
       pixelId: 'FACEBOOK_PIXEL_ID',
@@ -54,7 +54,7 @@ or even
 ```js
 {
   modules: [
-    'nuxt-facebook-pixel-module',
+    'nuxt-fb-pixel-module',
   ],
   facebook: {
     /* module options */
@@ -72,7 +72,7 @@ If you'd like to install the pixel disabled, and enable it later after the user 
 ```js
 {
   modules: [
-    'nuxt-facebook-pixel-module',
+    'nuxt-fb-pixel-module',
   ],
   facebook: {
     ...
@@ -105,7 +105,7 @@ The tracking pixel instance is available on all vue component instances as $fb. 
 | Method            | Purpose                                                                                                  | Equivalent to                  |
 |-------------------|----------------------------------------------------------------------------------------------------------|--------------------------------|
 | enable()          | If you had previously set `disabled: true` in config, enables the pixel and tracks the current page view | $fb.init(), $fb.track()        |
-| init()            | Initialises the pixel                                                                                    | fbq('init', <options.pixelId>) |
+| init(pixelId?)            | Initialises the pixel                                                                                    | fbq('init', <options.pixelId>) |
 | track(event, parameters)           | Sends a track event with optional `parameters`. It's `PageView` by default if the `event` is not defined.                                                                                      | fbq('track', <options.track>, parameters)  |
 | query(key, value, parameters) | Call the underlying fbq instance with anything else. The `parameters` attribute is optional.                                                      | fbq(key, value, parameters)                |
 
